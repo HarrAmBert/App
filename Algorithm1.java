@@ -1,16 +1,27 @@
+import java.util.StringTokenizer;
+
 public class Algorithm1
 {
     public int arr[];
+    public StringTokenizer result;
 
     public Algorithm1(int a[]) 
     {
         this.arr = a;
+        result = new StringTokenizer("");
     }
 
-    public int kBiggest(int k)
+    public long solve(int k)
     {
-        this.mergeSort(0, arr.length - 1);
-        return arr[k - 1];
+        Algorithm1 solver = new Algorithm1(arr);
+        
+        long start = System.currentTimeMillis();
+        solver.mergeSort(0, arr.length - 1);
+        long end = System.currentTimeMillis();
+        //result from the search 
+        //int result = solver.arr[k - 1]
+
+        return end - start;
     }
 
 	private void mergeSort(int l, int r) 

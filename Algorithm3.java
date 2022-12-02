@@ -1,17 +1,27 @@
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Algorithm3 
 {
     int arr[];
+    public StringTokenizer result;
 
     public Algorithm3(int arr[]) 
     {
         this.arr = arr;
+        result = new StringTokenizer("");
     }
-    public int kBiggest(int k)
+    public long solve(int k)
     {
-        quickSort(0, arr.length - 1);
-        return arr[k - 1];
+        Algorithm3 solver = new Algorithm3(arr);
+
+        long start = System.currentTimeMillis();
+        solver.quickSort(0, arr.length - 1);
+        long end = System.currentTimeMillis();
+        //result from the search
+        //int result = solver.arr[k - 1];
+        
+        return end - start;
     }
     private void quickSort(int begin, int end) 
     {
