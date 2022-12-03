@@ -1,22 +1,17 @@
-import java.util.StringTokenizer;
 
-public class Algorithm1
+public class Select_kth_1
 {
     public int arr[];
-    public StringTokenizer result;
 
-    public Algorithm1(int a[]) 
+    public Select_kth_1(int a[]) 
     {
         this.arr = a;
-        result = new StringTokenizer("");
     }
 
     public long solve(int k)
     {
-        Algorithm1 solver = new Algorithm1(arr);
-        
         long start = System.currentTimeMillis();
-        solver.mergeSort(0, arr.length - 1);
+        mergeSort(0, arr.length - 1);
         long end = System.currentTimeMillis();
         //result from the search 
         //int result = solver.arr[k - 1]
